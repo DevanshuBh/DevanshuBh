@@ -1,87 +1,92 @@
 # 🚀 Devanshu Bhargava
 
-**Backend Engineer | Distributed Systems | Generative AI (RAG + Agents)**
+**Full Stack Software Engineer | Distributed Systems | Generative AI (RAG + Agents)**
 
-📍 India | ☕ Turning complex systems into scalable reality
+📍 Noida, India | ☕ Turning complex systems into scalable reality
+
+📱 **[Explore my portfolio — built like an iPhone](https://portfolio-website-pink-alpha.vercel.app)**
 
 ---
 
 ## 🧠 About Me
 
-I design and build **high-performance backend systems** and **AI-powered platforms**.
-With 2+ years of experience, I specialize in **event-driven architectures**, **real-time data processing**, and **production-grade GenAI systems**.
+I build **scalable Java and Spring Boot microservices** and **event-driven systems** on Apache Kafka, Redis and PostgreSQL, engineered for fault tolerance with DLQs, circuit breakers, outbox and idempotency.
 
-Currently exploring:
-
-* 🔥 Advanced RAG pipelines
-* 🤖 Autonomous multi-agent systems
-* ⚡ Low-latency distributed architectures
+With 2+ years of experience, I pair strong backend engineering with hands-on **Generative AI**: hybrid RAG and GraphRAG pipelines, LangGraph multi-agent systems, retrieval evaluation and cost-aware LLM routing. I ship end to end with React/Next.js, Docker and AWS.
 
 ---
 
 ## 💼 Experience
 
 ### 🏢 Associate Software Engineer @ Infinite Computer Solutions
+*Oct 2024 – Present · Noida*
 
-* Built backend systems for a **GPS fleet tracking platform (50K+ active drivers)**
-* Designed **Kafka-based event pipelines** for high-frequency location data
-* Implemented **DLQ + retry mechanisms** for fault tolerance
-* Improved database throughput using **batch processing + PostgreSQL bulk inserts**
-* Developed **Redis Pub/Sub real-time architecture** for live WebSocket updates
+| 50K+ | 15K+ | 12× | 80% |
+|:---:|:---:|:---:|:---:|
+| active drivers | GPS events / sec | Postgres write throughput | less triage & replay time |
+
+* **High-Throughput Telemetry Platform:** Spring Boot services for an enterprise real-time **fleet tracking platform** serving **50K+ active drivers** and **15,000+ GPS events/sec**, in a 10+ engineer team
+* **Reliable Event Streaming:** **Kafka consumers** with manual offset commits, graceful shutdown hooks and rebalance listeners, so **no GPS event is lost** across crashes and rebalances
+* **Fault Isolation:** **batch-bisection recovery** and a **Dead Letter Queue** tagged by error class, cutting triage and replay time by **80%**
+* **Throughput Optimization:** **12× PostgreSQL write throughput** with 1,000-record Kafka batches, **COPY**-based bulk loads and idempotent upserts
+* **Real-Time Fan-Out:** **Redis Pub/Sub** with Lua-based stale-update guards and bounded-queue **WebSocket** gateways streaming live positions to dispatchers
 
 ---
 
 ## 🚀 Featured Projects
 
 ### 🛡️ SENTINEL — Event-Driven Fraud Detection Gateway
+**Java, Spring Boot, Kafka, Redis, Python, FastAPI**
 
-**Java, Spring Boot, Kafka, Redis, FastAPI**
+* Cut API latency from **2s+ to 50ms** by moving fraud analysis off the request path onto Kafka
+* **Resilience4j circuit breaker**, **Transactional Outbox** and DLQ for reliable fraud-event delivery, with **idempotency keys** preventing duplicate checks
+* Distributed **Redis token-bucket rate limiter** plus a **FastAPI ML inference service** for fraud scoring
+* Patterns: Two-Tier Processing · Saga · Strangler Fig · Correlation ID · Chain of Responsibility
 
-* Reduced API latency from **2s → 50ms** using async event-driven design
-* Implemented **Circuit Breaker, DLQ, Outbox Pattern**
-* Built **distributed rate limiter (Redis token bucket)**
-* Integrated ML inference service for fraud detection
+### 🧠 CORTEX — Multi-Tenant GraphRAG Research Platform
+**Python, LangGraph, pgvector, Neo4j, Amazon Bedrock**
 
----
+* **Hybrid retrieval:** Postgres full-text + pgvector HNSW, Reciprocal Rank Fusion, cross-encoder reranking and **Neo4j GraphRAG**; recall@k and MRR evaluated nightly in CI on a hand-labelled golden set
+* **Multi-agent orchestration:** LangGraph supervisor over Researcher, Analyst and Coder agents with loop guard and token budgets; cost-aware Ollama/Bedrock routing; sandboxed code execution
+* **Multi-tenant:** PostgreSQL Row-Level Security; SSE streaming from Celery workers to a Next.js UI with citations
 
-### 🧠 CORTEX — Autonomous Multi-Agent AI Platform
+### 🚚 NEXUS — Real-Time Fleet Tracking Platform
+**Java 21, Kafka, TimescaleDB, Redis, Next.js, AWS**
 
-**Python, FastAPI, LangGraph, pgvector, Celery, MLflow**
-
-* Built **Hybrid RAG system (73% recall vs 51%)**
-* Designed **multi-agent system (Researcher, Analyst, Coder, Orchestrator)**
-* Implemented **loop detection + cost control + fallback strategies**
-* Built async infra with **sub-100ms API latency for long LLM tasks**
-* Added **observability: latency, token usage, retrieval drift detection**
+* Hand-built ingestion: kafka-clients consumers commit offsets only after the DB commit; GPS events loaded into **TimescaleDB via COPY** with idempotent writes; load-tested with **k6 on a 50K-vehicle model**
+* Fault tolerant by design: DLQ, bisection recovery and partition-pause backpressure, tested with **Testcontainers + Toxiproxy**
+* **Next.js + MapLibre GL** live map fed by Redis Pub/Sub WebSocket fan-out; deployed on **AWS ECS via Terraform** with Grafana alerts
 
 ---
 
 ## ⚙️ Tech Stack
 
-### 🧩 Backend & Systems
+### 🧩 Languages
+* Java 21, Python, TypeScript, JavaScript, SQL
 
-* Java (Spring Boot), Python (FastAPI)
-* Microservices, REST APIs, System Design
+### ⚡ Backend & Distributed Systems
+* Spring Boot, FastAPI, gRPC, REST, Microservices
+* Apache Kafka, Redis, Celery, Resilience4j
 
-### ⚡ Distributed Systems
-
-* Apache Kafka, Redis
-* Circuit Breaker, DLQ, Idempotency, Outbox Pattern
-
-### 🧠 AI / GenAI
-
-* RAG (Hybrid Retrieval, Reranking)
-* LangChain, LangGraph, Ollama
-* Vector DBs (pgvector), MLflow
+### 🧠 Generative AI & ML
+* RAG, GraphRAG, LangGraph, LangChain
+* Amazon Bedrock, Ollama, scikit-learn, MLflow
 
 ### 🗄️ Databases
+* PostgreSQL, TimescaleDB, pgvector, Neo4j
 
-* PostgreSQL, TimescaleDB, Neo4j
+### ☁️ Cloud & DevOps
+* AWS (ECS, RDS, ElastiCache, S3, Cognito), Terraform
+* Docker, Kubernetes, GitHub Actions
 
-### ☁️ DevOps
+### 🧪 Frontend, Testing & Observability
+* React, Next.js
+* Testcontainers, JUnit 5, pytest, k6
+* OpenTelemetry, Prometheus, Grafana
 
-* Docker, Kubernetes, AWS
-* GitHub Actions, Prometheus, Grafana
+### 🏗️ Design Patterns
+* Transactional Outbox, Saga, CQRS, Circuit Breaker, Dead Letter Queue
+* Idempotency, Strangler Fig, Write-Through Cache, Fan-out, Backpressure
 
 ---
 
@@ -93,19 +98,21 @@ Currently exploring:
 
 ---
 
-## 🎯 Current Goals
+## 🏆 Certifications & Recognition
 
-* Contribute to **GenAI & RAG open source ecosystems**
-* Build **real-world AI systems at scale**
-* Transition into **top product-based company / global opportunities**
+* Google Data Analytics Professional Certificate
+* Google Advanced Data Analytics Professional Certificate
+* Performer of the Month among 200+ employees — Infinite Computer Solutions
 
 ---
 
 ## 📫 Connect With Me
 
+* 📱 Portfolio: https://portfolio-website-pink-alpha.vercel.app
 * 📧 [bhargavadevanshu10@gmail.com](mailto:bhargavadevanshu10@gmail.com)
-* 💼 LinkedIn: https://linkedin.com/in/devanshu-bhargava
-* 💻 GitHub: https://github.com/devanshubhargava
+* 💼 LinkedIn: https://www.linkedin.com/in/devanshu-bhargava-68b594258/
+* 💻 GitHub: https://github.com/DevanshuBh
+* ✍️ Medium: https://medium.com/@bhargavadevanshu10
 
 ---
 
